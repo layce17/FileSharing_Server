@@ -1,8 +1,7 @@
-package Core;
-
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.io.IOException;
 
 public class Server {
 	private int port = 3456;
@@ -43,9 +42,20 @@ public class Server {
 						e.printStackTrace();
 					}
 				}
+
+				try{
+					server.close();
+				} catch (IOException e){
+					e.printStackTrace();
+					server = null;
+				}
 			}
 		});
 		
 		t.start();
+	}
+
+	public void close(){
+		isRunning = false;
 	}
 }
