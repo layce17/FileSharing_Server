@@ -87,6 +87,6 @@ public class ClientProcesseur implements Runnable {
 	}
 
 	private TreeModel getTreeFiles(){
-		return new FileTree("D:/").getModel();
+		return new FileTree("E:/").getModel();
 	}
 }
